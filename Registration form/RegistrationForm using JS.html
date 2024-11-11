@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Registration form</title>
+    <style>
+     .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             padding-top:150px;
+             /* Full viewport height */
+            /* Light background color */
+        }    </style>
+    <script>
+        function validateForm() {
+            // Get form elements
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const dob = document.getElementById('dob').value;
+            const gender = document.getElementById('gender').value;
+
+            // Regular expressions
+            const usernameRegex = /^[a-zA-Z0-9_]{8,}$/;  // Username: 8 alphanumeric or underscores
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com)$/; // Email: Valid format and ends with .com
+            const passwordRegex = /^(?=._@*[A-Z]).{8,}$/; // Password: At least 8 characters long and includes at least one uppercase letter
+
+            // Validate username
+            if (!usernameRegex.test(username)) {
+                alert('Invalid username. It should be atleast 8 characters long and may include letters, numbers, and underscores.');
+                return false;
+            }
+
+            // Validate email
+            if (!emailRegex.test(email)) {
+                alert('Invalid email. It should be at least 8 characters long, contain an @ symbol, and end with .com.');
+                return false;
+            }
+
+            // Validate password
+            if (!passwordRegex.test(password)) {
+                alert('Invalid password. It should be at least 8 characters long and include at least one uppercase letter.');
+                return false;
+            }
+
+            // Validate date of birth
+            if (!dob) {
+                alert('Please enter your date of birth.');
+                return false;
+            }
+
+            // Validate gender
+            if (!gender) {
+                alert('Please select your gender.');
+                return false;
+            }
+
+            // If all validations pass
+            alert('Registration successful!');
+            return true;
+        }
+    </script>
+</head>
+<body bgcolor="#f0f0f0">
+  <div class="container">
+    <fieldset>
+    <h1>Registration Form</h1>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+   </fieldset>
+</div>
+</body>
+</html>
