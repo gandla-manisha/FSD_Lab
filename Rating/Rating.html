@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+       <title>Rate the Movie: Kalki</title>
+       <style>
+               body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+        }
+
+        .card {
+            max-width: 33rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            
+            text-align: center;
+        }
+
+        .star {
+            font-size: 50px; /* Adjust size of stars */
+            cursor: pointer;
+            transition: color 0.5s, transform 0.2s;
+            
+            color: grey; /* Default star color */
+        }
+
+               .one { color: rgb(255, 0, 0); }
+        .two { color: rgb(255, 106, 0); }
+        .three { color: rgb(251, 255, 12); }
+        .four { color: rgb(255, 255, 0); }
+        .five { color: rgb(24, 159, 14); }
+
+        img {
+            width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+      
+            </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Rate the Movie: Kalki</h1>
+        <img src="https://i.ytimg.com/vi/kQDd1AhGIHk/maxresdefault.jpg" alt="Kalki Movie Poster">
+        <div>
+            <span tabindex="0" onclick="rateMovie(1)" onkeypress="if(event.key === 'Enter') rateMovie(1)" class="star" aria-label="1 star">★</span>
+            <span tabindex="0" onclick="rateMovie(2)" onkeypress="if(event.key === 'Enter') rateMovie(2)" class="star" aria-label="2 stars">★</span>
+            <span tabindex="0" onclick="rateMovie(3)" onkeypress="if(event.key === 'Enter') rateMovie(3)" class="star" aria-label="3 stars">★</span>
+            <span tabindex="0" onclick="rateMovie(4)" onkeypress="if(event.key === 'Enter') rateMovie(4)" class="star" aria-label="4 stars">★</span>
+            <span tabindex="0" onclick="rateMovie(5)" onkeypress="if(event.key === 'Enter') rateMovie(5)" class="star" aria-label="5 stars">★</span>
+        </div>
+        <h3 id="output">Rating is: </h3>
+            </div>
+    <script>
+        let stars = document.getElementsByClassName("star");
+        let output = document.getElementById("output");
+
+        const colors = ["", "one", "two", "three", "four", "five"];
+
+        function rateMovie(n) {
+            clearStars();
+            for (let i = 0; i < n; i++) {
+                stars[i].className = "star " + colors[n];
+            }
+            output.innerText = "Rating is: " + n + "/5";
+        }
+
+        function clearStars() {
+            for (let star of stars) {
+                star.className = "star";
+            }
+        }
+
+       function resetRating() {
+            clearStars();
+            output.innerText = "Rating is: ";
+        }
+    </script>
+</body>
+
+</html>
