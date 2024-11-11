@@ -1,0 +1,16 @@
+// src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Car from './Class';
+import ClassComponent2 from './Function';
+import './index.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+    <Car color="red"/>
+    
+    <ClassComponent2 />
+  </React.StrictMode>
+);
