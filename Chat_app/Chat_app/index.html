@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Interface</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="background-text">
+    <center>
+    <h1>Welcome to ChatApp
+    <br>22251A05D8<br>22251A05E1<br>22251A05E3<br></h1>
+  </center>
+  </div>
+  <div class="chat-container">
+    <!-- Message Header -->
+    <div class="message-header">
+      <img src="images/boy.jpg" alt="User Avatar" class="avatar">
+      <div class="user-info">
+        <h3 class="user-name">John Doe</h3>
+        <p class="last-seen">online</p>
+      </div>
+      <div class="call-icons">
+        <i class="fas fa-phone-alt call-icon"></i>
+        <i class="fas fa-video video-call-icon"></i>
+        <i class="fas fa-ellipsis-h more-options-icon"></i>
+      </div>
+    </div>
+
+    <!-- Chat Box -->
+    <div class="chat-box">
+      <!-- Message Page -->
+      <div class="message-page">
+        <div class="message incoming">
+          
+        
+        
+        </div>
+        <div class="message outgoing">
+          
+          
+        </div>
+      </div>
+
+      <!-- Message Bottom -->
+      <div class="message-bottom">
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
